@@ -74,7 +74,7 @@ class UserSignUp extends Component {
 
     return (
         <div className="form--centered">
-          <h1>Sign Up</h1>
+          <h2>Sign Up</h2>
           <Form 
             cancel={this.cancel}
             errors={errors}
@@ -82,6 +82,7 @@ class UserSignUp extends Component {
             submitButtonText="Sign Up"
             elements={() => (
               <Fragment>
+                <label htmlFor="firstName">First Name</label>
                 <input 
                   id="firstName" 
                   name="firstName" 
@@ -89,6 +90,7 @@ class UserSignUp extends Component {
                   value={firstName} 
                   onChange={this.change} 
                   placeholder="First Name" />
+                <label htmlFor="lastName">Last Name</label>
                 <input 
                   id="lastName" 
                   name="lastName" 
@@ -96,6 +98,7 @@ class UserSignUp extends Component {
                   value={lastName} 
                   onChange={this.change} 
                   placeholder="Last Name" />
+                <label htmlFor="emailAddress">Email Address</label>
                 <input 
                     id="emailAddress" 
                     name="emailAddress" 
@@ -103,6 +106,7 @@ class UserSignUp extends Component {
                     value={emailAddress} 
                     onChange={this.change} 
                     placeholder="Email Adress" />
+                <label htmlFor="password">Password</label>
                 <input 
                   id="password" 
                   name="password"
