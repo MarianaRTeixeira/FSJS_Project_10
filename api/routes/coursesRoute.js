@@ -85,6 +85,7 @@ router.put('/courses/:id', authenticateUser, asyncHandler(async(req,res)=> {
                   description: req.body.description,
                   materialsNeeded: req.body.materialsNeeded,
                   estimatedTime: req.body.estimatedTime
+                  
               }
           )
           res.status(204); //The server has fulfilled the request but does not need to return an entity-body
@@ -98,7 +99,7 @@ router.put('/courses/:id', authenticateUser, asyncHandler(async(req,res)=> {
   catch(error) {
       if (error.name === 'SequelizeValidationError' || error.name === 'SequelizeUniqueConstraintError') { 
           const errors = error.errors.map(err => err.message);
-          res.status(400).json({ errors });   
+          res.status(400).json( errors );   
       } else {
           throw error;
       }

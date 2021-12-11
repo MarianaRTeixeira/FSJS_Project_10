@@ -61,35 +61,35 @@ cancel = () => {
 
     return (
      <main>
-        <div className="form--centered">
-          <h1>Sign In</h1>
+        <div className='form--centered'>
+          <h2>Sign In</h2>
           <Form 
             cancel={this.cancel}
             errors={errors}
             submit={this.submit}
-            submitButtonText="Sign In"
+            submitButtonText='Sign In'
             elements={() => (
               <Fragment>
                 <label htmlfor='emailAddress'>Email Address</label>
                 <input 
-                  id="emailAddress" 
-                  name="emailAddress" 
-                  type="text"
+                  id='emailAddress' 
+                  name='emailAddress' 
+                  type='text'
                   value={emailAddress} 
                   onChange={this.change} 
-                  placeholder="Email" />
-                <label htmlFor='password'>Password</label>
+                  placeholder='Email' />
+                  <label htmlFor='password'>Password</label>
                 <input 
-                  id="password" 
-                  name="password"
-                  type="password"
+                  id='password' 
+                  name='password'
+                  type='password'
                   value={password} 
                   onChange={this.change} 
-                  placeholder="Password" />                
+                  placeholder='Password' />                
               </Fragment>
             )} />
           <p>
-            Don't have a user account? <Link to="/signup">Click here</Link> to sign up!
+            Don't have a user account? <Link to='/signup'>Click here</Link> to sign up!
           </p>
         </div>
      </main>
@@ -103,6 +103,6 @@ export default UserSignIn;
 /**
  * UserSignIn :
  *  The component renders a form allowing the user to sign in using their existing account information, 
- *  a "Sign In" button that when clicked signs in the user,
- *  and a "Cancel" button that returns the user to the default route (i.e. the list of courses).
+ *  a 'Sign In' button that when clicked signs in the user,
+ *  and a 'Cancel' button that returns the user to the default route (i.e. the list of courses).
  */

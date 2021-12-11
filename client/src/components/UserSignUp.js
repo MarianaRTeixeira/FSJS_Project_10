@@ -82,7 +82,7 @@ class UserSignUp extends Component {
             submitButtonText="Sign Up"
             elements={() => (
               <Fragment>
-                <label htmlFor="firstName">First Name</label>
+              <label htmlFor="firstName">First Name</label>
                 <input 
                   id="firstName" 
                   name="firstName" 

@@ -48,9 +48,9 @@ class UpdateCourse extends Component{
     }
 
     //Change
-    change = (e) => {
-        const name = e.target.name;
-        const value = e.target.value;
+    change = (event) => {
+        const name = event.target.name;
+        const value = event.target.value;
         this.setState(() => {
           return {
             [name]: value
@@ -75,7 +75,8 @@ class UpdateCourse extends Component{
             title, 
             description,
             estimatedTime,
-            materialsNeeded
+            materialsNeeded,
+        
         } = this.state;
     
         const updatedCourse = {
@@ -127,7 +128,7 @@ class UpdateCourse extends Component{
                     <div className='main--flex'>
                         <Fragment>
                             <div>
-                                <label htmlFor='title'>{title}</label>
+                                <label htmlFor='title'>Course Title </label>
                                 <input id='title' name='title' type='text' value={title} onChange={this.change}/>
                                 <p>By {authUser.firstName} {authUser.lastName}</p>
                                 <label htmlFor='description'>Description</label>
@@ -135,15 +136,15 @@ class UpdateCourse extends Component{
                             </div>
                             
                             <div>
-                            {/* Estimated Time */}
+                            
                                 <label htmlFor='estimatedTime'>Estimated Time</label>
-                                <input id='estimatedTime' name='estimatedTime' type='text' value={estimatedTime} onChange={this.change}/>
+                                <input id='estimatedTime' name='estimatedTime' type='text' value={estimatedTime} onInput={this.change}/>
                             {/* Materials needeed */}
                                 <label htmlFor='materialsNeeded'>Materials Needed</label>
-                                <textarea id='materialsNeeded' name='materialsNeeded' value={materialsNeeded} onChange={this.change}></textarea>
+                                <textarea id='materialsNeeded' name='materialsNeeded' value={materialsNeeded} onInput={this.change}></textarea>
                             </div>
                             </Fragment>
-                        </div>
+                    </div>
                     )}
                 />
             </div>
