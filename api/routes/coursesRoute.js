@@ -50,7 +50,7 @@ router.get('/courses/:id', asyncHandler(async(req, res)=>{
  * set the `Location` header to the URI for the newly created course, 
  * return a `201` HTTP status code and no content.
  */
- router.post('/courses', authenticateUser, asyncHandler(async(req, res) => {
+ router.post('/courses/create', authenticateUser, asyncHandler(async(req, res) => {
   try {
       const course = await Courses.create(req.body);
       if(course.userId == req.currentUser.id){ 
@@ -82,7 +82,9 @@ router.put('/courses/:id', authenticateUser, asyncHandler(async(req,res)=> {
           await course.update(
               { //uptdade the 2 fields required
                   title: req.body.title, 
-                  description: req.body.description
+                  description: req.body.description,
+                  materialsNeeded: req.body.materialsNeeded,
+                  estimatedTime: req.body.estimatedTime
               }
           )
           res.status(204); //The server has fulfilled the request but does not need to return an entity-body
